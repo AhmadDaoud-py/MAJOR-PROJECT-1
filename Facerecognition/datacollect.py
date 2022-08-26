@@ -27,10 +27,12 @@ while True:
 	for x,y,w,h in faces:
 		count=count+1
 		name='./images/'+perID+'/'+ str(count) + '.jpg'
-		print("Creating Images........." +name)
+		print("Storing Image.........", name)
 		cv2.imwrite(name, frame[y:y+h,x:x+w])
 		cv2.rectangle(frame, (x,y), (x+w, y+h), (0,255,0), 3)
 	cv2.imshow("WindowFrame", frame)
+	# if cv2.waitKey(20) & 0xFF ==ord('d'):
+    #      break
 	cv2.waitKey(1)
 	if count>500:
 		break
